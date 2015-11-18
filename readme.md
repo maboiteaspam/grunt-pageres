@@ -39,6 +39,14 @@ grunt.initConfig({
 				dest: 'dist',
 				crop: true
 			}
+		},
+		scripted: {
+			options: {
+				urls: ['yeoman.io', 'google.com'],
+				sizes: ['1000x1000'],
+				dest: 'tmp',
+				script: 'examples/hello.js'
+			}
 		}
 	}
 });
@@ -166,6 +174,22 @@ Custom user agent.
 Type: `object`
 
 Custom HTTP request headers.
+
+##### script
+
+Type: `string`  
+Default: `false`
+
+A path to a script ot inject into the page before the screenshot. 
+Please review this [example](https://github.com/maboiteaspam/screenshot-stream/blob/script-include/test/fixtures/test-phantomjs-script.js) 
+for more details.
+
+##### timeout
+
+Type: `number`  
+Default: `3`
+
+A timeout to kill phantomjs in case your injected script fails.
 
 
 ## License
